@@ -36,6 +36,14 @@
     box-shadow: 0 0 10px 2px;
 }
 
+#question-answer-container{
+    text-align: center;
+
+}
+
+#questionsection{
+    margin: 20px;
+}
 
 .btn{
     display: block;
