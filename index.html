@@ -10,20 +10,26 @@
 <body>
     <header id="header">
         <a id="Highscore" href="#">View Highscores</a>
-        <h3 id="timecounter">Time:</h3>
+        <h3 id="timecounter">Time: <span id="timeleft">0</span></h3>
     </header>
 
-    <main>
+    <main id="maincontainer">
         <section id="container">
+            <div id="startpage" class="startpg">
+                <h2>Coding Quiz Challenge</h2>
+                <p>Try to answer the following code related questions within the time limit.
+                Keep in mind that incorrect answers will penalize yout scoretime by ten seconds!
+                </p>
+            </div>
             <div id="question-answer-container" class="hide">
-                <h3 id="questionsection">Questions</h3>
-                <div id = "answersbutton" class="">
+                <h3 id="questionsection"></h3>
+                <div id = "answersbutton" >
                     
                 </div>
             </div>
 
             <div id="startbtncontainer">
-                <button id="start-btn" class="start-btn btn">Start</button>
+                <button id="start-btn" class="start-btn btn">Start Quiz</button>
             </div>   
 
         </section>

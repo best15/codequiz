@@ -25,6 +25,21 @@
     font: 18px;
 }
 
+#startpage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h2{
+    padding: 10px;
+}
+
+p{
+   margin: 20px;
+}
+
 #container{
     width: 30vw;
     max-width: 70%;
@@ -79,3 +94,17 @@
     display: none;
 
 }
+
+
+li{
+    list-style-type:decimal;
+    text-align: left;
+    margin: 10px;
+}
+/* 
+#maincontainer{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    
+} */
