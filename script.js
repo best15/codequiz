@@ -37,12 +37,12 @@ setnextquestion();
 function setnextquestion(){
 
     resetcontainer();
-    if (questions_answers.length != questionindex)
+    if ( questionindex < questions_answers.length)
     {
     renderquestion(questions_answers[questionindex]);
     }else
     {
-        submitscore();
+         submitscore();
     }
 
 }
@@ -80,6 +80,7 @@ function selectanswer(event){
     }else
     {
         answercheck.textContent = "Wrong";
+        secondsLeft = secondsLeft - 10; //Reduce 10s from timer
     }
 
     questionindex++;
@@ -95,6 +96,7 @@ function resetcontainer(){
 function submitscore(){
 
     maincontainer.innerHTML = '';
+    maincontainer.setAttribute('class','maincontainer');
     // questionElement.textContent = "All Done !"; 
     var headline = document.createElement("h3");
     headline.textContent = "All Done";
@@ -176,16 +178,20 @@ function clearallhighscores(deleteelement){
 }
 
 function setTime() {
-  
+    
     var timerInterval = setInterval(function() {
       secondsLeft--;
       timeleft.textContent = secondsLeft ;
-  
-      if(secondsLeft === 0) {
+       
+      if(secondsLeft === 0 ) {
         
         clearInterval(timerInterval);
       
         submitscore();
+      }
+      else if(questionindex >= questions_answers.length){
+        
+        clearInterval(timerInterval);
       }
   
     }, 1000);
