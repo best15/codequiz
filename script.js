@@ -61,6 +61,7 @@ function selectanswer(event){
     var selectedanswer = event.target;
     if(selectedanswer.dataset.correct)
     {
+        score = score + 10;
         answercheck.textContent = "Correct";
 
     }else
@@ -88,7 +89,7 @@ function submitscore(){
     var  userinitials = document.createElement("Label");
     userinitials.textContent = "Enter initials:";
  
-    inputcontent = document.createElement("input");
+    var inputcontent = document.createElement("input");
  
     var submit  = document.createElement("button");
     submit.setAttribute("class","btn");
@@ -100,8 +101,41 @@ function submitscore(){
     answerbuttons.append(inputcontent);
     answerbuttons.append(submit);
 
+    submit.addEventListener('click', function(){
+
+        localStorage.setItem("username", inputcontent.value);
+        localStorage.setItem("score", score);
+        answerbuttons.innerHTML = '';
+
+        questionElement.textContent = "HighScores"; 
+ 
+        var ul_list = document.createElement("ul");
+    
+        var li_list = document.createElement("li");
+         
+        li_list.textContent = localStorage.getItem("username") + localStorage.getItem("score");
+
+        var home  = document.createElement("button");
+        home.setAttribute("class","btn");
+        home.textContent = "Go Back";
+
+        var clearhighscore  = document.createElement("button");
+        clearhighscore.setAttribute("class","btn");
+        clearhighscore.textContent = "Clear Highscores"
+
+  
+        answerbuttons.append(ul_list);
+        ul_list.append(li_list);
+        answerbuttons.append(home)
+        answerbuttons.append(clearhighscore)
+    });
 
 }
+
+// function onclicksubmitscore(){
+
+//     console.log(inputcontent.value);
+// }
 
 var questions_answers = [
     {
