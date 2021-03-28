@@ -101,10 +101,14 @@ function submitscore(){
     answerbuttons.append(inputcontent);
     answerbuttons.append(submit);
 
-    submit.addEventListener('click', function(){
 
+    submit.addEventListener('click', function(){
+        console.log(localStorage.getItem("score") == null );
+        if(localStorage.getItem("score") < score || localStorage.getItem("score") == null)
+        { console.log("ifcondition entered");
         localStorage.setItem("username", inputcontent.value);
         localStorage.setItem("score", score);
+        }
         answerbuttons.innerHTML = '';
 
         questionElement.textContent = "HighScores"; 
@@ -128,14 +132,26 @@ function submitscore(){
         ul_list.append(li_list);
         answerbuttons.append(home)
         answerbuttons.append(clearhighscore)
+
+        home.addEventListener('click', gobacktohome);
+        clearhighscore.addEventListener('click', function(){
+            clearallhighscores(ul_list);
+        });
+
     });
 
 }
 
-// function onclicksubmitscore(){
+function gobacktohome(){
+    location.reload();
+}
 
-//     console.log(inputcontent.value);
-// }
+
+function clearallhighscores(deleteelement){
+    deleteelement.remove();
+    localStorage.clear();
+}
+
 
 var questions_answers = [
     {
