@@ -37,7 +37,7 @@ h2{
 }
 
 #quizrule{
-   margin: 20px;
+   margin: 10px;
 }
 
 #container{
@@ -49,6 +49,17 @@ h2{
     margin-left: 35%;
     border-radius: 30px;
     box-shadow: 0 0 10px 2px;
+}
+
+#check{
+   
+        width: 30vw;
+        max-width: 70%;
+        height: 40vh;
+        margin-top: 1.625rem;
+        margin-left: 35%;
+        font-style: italic;
+  
 }
 
 #question-answer-container{
@@ -100,19 +111,32 @@ li{
     list-style-type:decimal;
     text-align: left;
     margin: 10px;
+    padding: 10px 10px 5px 10px;
+    font-weight: 600;
+    width: 50%;
+    background-color: #cdbbdd;
+    border-radius: 20px;
 }
-/* 
-#maincontainer{
-    margin: 20px;
-    display: flex;
-    justify-content: center;
-    
-} */
+
 .maincontainer{
-    width: 30vw;
+   
+    width: 50vw;
     max-width: 70%;
     height: 40vh;
     margin-top: 1.625rem;
     margin-left: 35%;
 
 }
+
+.scoremessage{
+
+    font-weight:600;
+    margin: 5px;
+
+}
+
+.btndiv{
+    display: flex;
+}
+
+
