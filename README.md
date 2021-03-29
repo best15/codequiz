@@ -4,10 +4,10 @@ This is a simple code quiz application where user is provided with a question an
 
 Deploy Link:  https://best15.github.io/codequiz/
 
- ![CodeQuiz-start-image](.Assests/images/codequizstart.jpg)
+ ![CodeQuiz-start-image](./images/codequizstart.jpg)
 
 
- ![CodeQuiz-submit-image](.Assests/images/codequizsubmit.jpg)
+ ![CodeQuiz-submit-image](./images/codequizsubmit.jpg)
 
 
- ![CodeQuiz-highscore-image](.Assests/images/highscore.jpg)
+ ![CodeQuiz-highscore-image](./images/highscore.jpg)
