@@ -85,6 +85,7 @@ h2{
 }
 
 .btn:hover {
+    opacity: 0.8;
     border-color: black;
 }
 
