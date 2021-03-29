@@ -75,9 +75,6 @@ function renderquestion(question){
 
 function selectanswer(event){
 
-    // var answercheck = document.createElement('p');
-    // answerbuttons.append(answercheck);
-
     var selectedanswer = event.target;
     if(selectedanswer.dataset.correct)
     {
