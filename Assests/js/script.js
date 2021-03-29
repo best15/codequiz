@@ -1,3 +1,4 @@
+
 var header = document.getElementById('header');
 var maincontainer = document.getElementById('maincontainer');
 var container = document.getElementById('container');
@@ -17,8 +18,10 @@ var secondsLeft = 60;
 var usernames = [];
 var userscore = [];
 
+// Eventlistner when start button is clicked
 startbutton.addEventListener('click', startquiz);
 
+// Event listner when highscore link is clicked
 highscore.addEventListener('click', function(){
     startbutton.classList.add('hide');
     startsection.remove();
@@ -26,6 +29,7 @@ highscore.addEventListener('click', function(){
     maincontainer.classList.add('maincontainer');
     onclicksubmitscore();
 } );
+
 
 function startquiz (){
 
@@ -39,7 +43,7 @@ setnextquestion();
     
 }
 
-
+// function that resets all the elements and sets next question if condition approved
 function setnextquestion(){
 
     resetcontainer();
@@ -53,6 +57,7 @@ function setnextquestion(){
 
 }
 
+// function that select the specific object key and renders questions and answers
 function renderquestion(question){
     
     questionElement.textContent = question.Q;
@@ -73,12 +78,13 @@ function renderquestion(question){
 }
 
 
+// Function when answer is selected or clicked
 function selectanswer(event){
 
     var selectedanswer = event.target;
     if(selectedanswer.dataset.correct)
     {
-        score = score + 10;
+        score = score + 10; //Add 10 point whenever answer is correct
         checkanswer("Correct");  
       
     }else
@@ -93,17 +99,19 @@ function selectanswer(event){
 
 }
 
+// Function that displays whether answer is correct or wrong
 function checkanswer(checkans){
     check.classList.remove('hide');
     answercheck.textContent = checkans;
     setTimeout(function(){check.classList.add('hide')},1000);
 }
 
-
+// Function that clears all the answersection
 function resetcontainer(){
     answerbuttons.innerHTML = '';
 }
 
+// Function called when last question is finished or time is finished
 function submitscore(){
 
     maincontainer.innerHTML = '';
@@ -144,11 +152,12 @@ function submitscore(){
 
 }
 
+// Function called when submit button is clicked
 function onclicksubmitscore(usrinitial){
 
     header.remove();
  
-   if(typeof(usrinitial) != "undefined")
+   if(typeof(usrinitial) != "undefined") //validation when called from start page using highscore link
     {  
     if( JSON.parse(localStorage.getItem("username")) != null)
     {
@@ -161,12 +170,6 @@ function onclicksubmitscore(usrinitial){
     localStorage.setItem("userscore", JSON.stringify(userscore));
     }
 
-    
-    // if(localStorage.getItem("score") < score || localStorage.getItem("score") == null)
-    // { 
-    // localStorage.setItem("username", usrinitial);
-    // localStorage.setItem("score", score);
-    // }
     maincontainer.innerHTML = '';
 
     var divsection = document.createElement("div");
@@ -184,6 +187,7 @@ function onclicksubmitscore(usrinitial){
     var ul_list = document.createElement("ul");
     maincontainer.append(ul_list);
 
+    //append list item with username and score 
     for (var i= 0;i<usernames.length;i++)
     {
         var li_list = document.createElement("li");
@@ -213,16 +217,19 @@ function onclicksubmitscore(usrinitial){
 
 }
 
+// function to refresh the page when goback button is clicked
 function gobacktohome(){
     location.reload();
 }
 
 
+//function to clear all the score 
 function clearallhighscores(deleteelement){
     deleteelement.remove();
     localStorage.clear();
 }
 
+// function to set time interval
 function setTime() {
     
     var timerInterval = setInterval(function() {
@@ -243,6 +250,7 @@ function setTime() {
     }, 1000);
   }
 
+//   object that has all question and answers 
 var questions_answers = [
     {
     Q: "Inside which HTML element do we put the JavaScript?",
