@@ -1,4 +1,4 @@
-
+// Get all required elements 
 var header = document.getElementById('header');
 var maincontainer = document.getElementById('maincontainer');
 var container = document.getElementById('container');
@@ -30,7 +30,7 @@ highscore.addEventListener('click', function(){
     onclicksubmitscore();
 } );
 
-
+// function when start button is clicked
 function startquiz (){
 
 startsection.remove();
@@ -57,7 +57,7 @@ function setnextquestion(){
 
 }
 
-// function that select the specific object key and renders questions and answers
+// function that select the specific object key and renders question and answers
 function renderquestion(question){
     
     questionElement.textContent = question.Q;
@@ -69,7 +69,7 @@ function renderquestion(question){
     answer.textContent = j+1 + ". "+ question.A[j].ans;
     answerbuttons.append(answer);
     if (question.A[j].correct)
-    {
+    {  //Create data attribute correct for correct answer
        answer.dataset.correct = question.A[j].correct;
     }
     answer.addEventListener('click', selectanswer);
@@ -90,7 +90,7 @@ function selectanswer(event){
     }else
     {
         checkanswer("Wrong"); 
-        secondsLeft = secondsLeft - 10; //Reduce 10s from timer
+        secondsLeft = secondsLeft - 10; //Reduce 10s from timer if answer is wrong
     }
 
     questionindex++;
@@ -123,7 +123,7 @@ function submitscore(){
 
 
     var ptag = document.createElement("p");
-    ptag.textContent = ("Your Final Score is:" + score ) ;
+    ptag.textContent = ("Your Final Score is: " + score ) ;
     ptag.setAttribute("class","scoremessage");
 
     var  userinitials = document.createElement("Label");
@@ -156,10 +156,10 @@ function submitscore(){
 function onclicksubmitscore(usrinitial){
 
     header.remove();
- 
-   if(typeof(usrinitial) != "undefined") //validation when called from start page using highscore link
+    console.log(JSON.parse(localStorage.getItem("username")) !== null);
+   if(typeof(usrinitial) !== "undefined") //validation when called from start page using highscore link
     {  
-    if( JSON.parse(localStorage.getItem("username")) != null)
+    if( JSON.parse(localStorage.getItem("username")) !== null)
     {
     usernames = JSON.parse(localStorage.getItem("username"));
     userscore = JSON.parse(localStorage.getItem("userscore"));
@@ -179,7 +179,7 @@ function onclicksubmitscore(usrinitial){
     headline.textContent = "Highscores";
     maincontainer.append(headline);
 
-    if (JSON.parse(localStorage.getItem("username")) != null)
+    if (JSON.parse(localStorage.getItem("username")) !== null)
     {
     usernames = JSON.parse(localStorage.getItem("username"));
     userscore = JSON.parse(localStorage.getItem("userscore"));
