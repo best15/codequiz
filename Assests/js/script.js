@@ -103,7 +103,10 @@ function selectanswer(event){
 function checkanswer(checkans){
     check.classList.remove('hide');
     answercheck.textContent = checkans;
-    setTimeout(function(){check.classList.add('hide')},1000);
+    setTimeout(function()
+    {
+        check.classList.add('hide')
+    },1000);
 }
 
 // Function that clears all the answersection
@@ -156,14 +159,14 @@ function submitscore(){
 function onclicksubmitscore(usrinitial){
 
     header.remove();
-    console.log(JSON.parse(localStorage.getItem("username")) !== null);
-   if(typeof(usrinitial) !== "undefined") //validation when called from start page using highscore link
+    
+    if(typeof(usrinitial) !== "undefined") //validation when called from start page using highscore link
     {  
-    if( JSON.parse(localStorage.getItem("username")) !== null)
-    {
-    usernames = JSON.parse(localStorage.getItem("username"));
-    userscore = JSON.parse(localStorage.getItem("userscore"));
-    }
+        if( JSON.parse(localStorage.getItem("username")) !== null)
+        {
+        usernames = JSON.parse(localStorage.getItem("username"));
+        userscore = JSON.parse(localStorage.getItem("userscore"));
+        }
     usernames.push(usrinitial);
     userscore.push(score);
     localStorage.setItem("username", JSON.stringify(usernames));
