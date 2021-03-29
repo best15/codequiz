@@ -11,7 +11,7 @@
     background: #8e9eab;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #eef2f3, #8e9eab);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #eef2f3, #8e9eab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    padding-bottom: 3px;
+    padding-bottom: 10px;
 
     
 }
@@ -23,6 +23,13 @@
 
 #Highscore{
     font: 18px;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+
+#Highscore:hover{
+    color:rgb(158, 64, 41);
 }
 
 #startpage{
@@ -44,6 +51,7 @@ h2{
     width: 30vw;
     max-width: 70%;
     height: 40vh;
+    max-height: 70%;
     background-color: rgb(206, 206, 238);
     margin-top: 1.625rem;
     margin-left: 35%;
@@ -124,6 +132,7 @@ li{
     width: 50vw;
     max-width: 70%;
     height: 40vh;
+    max-height: 70%;
     margin-top: 1.625rem;
     margin-left: 35%;
 
@@ -140,4 +149,34 @@ li{
     display: flex;
 }
 
+/* To make app responsive */
+@media only screen and (max-width: 950px) {
 
+#maincontainer{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+
+    }
+
+#container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    height: fit-content;
+    
+}
+
+#quizrule{
+    margin: 0;
+    width: 60%; 
+  
+}
+
+
+}
